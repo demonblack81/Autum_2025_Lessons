@@ -3,7 +3,9 @@ public class Main {
         int id = 1;
         String name = "Add Class";
         String description = "Example how to create Class";
-        CheckList checkList = new CheckList(id, name, description);
+        Levels levels = Levels.smoke;
+        TestStatus status = TestStatus.passed;
+        ExtendedCheckList checkList = new ExtendedCheckList(id, name, description, levels, status);
         checkList.addRunStep("Add new file in project");
         checkList.addExteptedStep("File add in project");
 
@@ -21,5 +23,7 @@ public class Main {
                 checkList.exteptedSteps.get(i).printStep();
             }
         }
+        System.out.println("Level of test: " + checkList.level);
+        System.out.println("Status of test: " + checkList.status);
     }
 }
