@@ -37,19 +37,18 @@ public class Main {
     public static void example_with_while() {
         String userInput = " ";
         Scanner scanner = new Scanner(System.in);
-        while (!userInput.isEmpty()) {
+        while (!userInput.equalsIgnoreCase("exit")) {
             System.out.print("Please enter something: ");
             userInput = scanner.nextLine();
             if (userInput.isEmpty()) {
-                userInput = " ";
+               System.out.println("You've entered nothing, for quit type 'Exit'");
+            } else {
+                System.out.println("You've entered: " + userInput);
             }
-            if (userInput.equalsIgnoreCase("exit")) {
-                System.out.println("Bye, you are enter " + userInput);
-                break;
-            }
-            System.out.println("You've entered: " + userInput);
         }
+        System.out.println("Bye, you are enter " + userInput);
     }
+    
     public static void example_with_for() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please enter a namber: ");
@@ -62,7 +61,7 @@ public class Main {
         if (x < 0) {
             sum = -sum;
         }
-        System.out.printf("The sum of all numbers from 0 to %d is %d", x, sum);
+        System.out.printf("The sum of all numbers from 0 to %d is %d\n", x, sum);
     }
 
     public static void emaple_4() {
